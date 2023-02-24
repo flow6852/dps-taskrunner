@@ -8,7 +8,7 @@ export type Args = {
 export async function main(denops: Denops): Promise<void> {
   denops.dispatcher = {
     async build(args: unknown): Promise<unknown> {
-      const result = Deno.run({cmd: (args as Args).split(' ')});
+      const result = Deno.run({cmd: (args as Args).cmpcmd.split(' ')});
       return await Promise.resolve(result);
     },
   };
