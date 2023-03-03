@@ -12,7 +12,7 @@ https://github.com/vim-denops/denops.vim
 
 ```
 augroup taskrunner
-    autocmd BufWritePost *.md call taskrunner#doTask("pandoc " . expand('%') . " -o " . expand('%:r') . '.pdf')
-    autocmd BufWritePost *.c call taskrunner#doTask("gcc -o " . expand('%:r') . " " . expand('%'))
+    autocmd BufWritePost *.md call taskrunner#run(["pandoc", expand('%'), "-o " . expand('%:r') . '.pdf'])
+    autocmd BufWritePost *.c call taskrunner#run(["gcc", "-o " . expand('%:r'),  expand('%')])
 augroup END
 ```
