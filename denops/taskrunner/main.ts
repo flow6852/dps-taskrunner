@@ -6,7 +6,7 @@ export type Args = {
   logfile: string;
 };
 
-export async function main(denops: Denops): Promise<void> {
+export function main(denops: Denops): void {
   denops.dispatcher = {
     async run(args: unknown): Promise<unknown> {
       if ((args as Args).enable) {
